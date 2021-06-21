@@ -8,6 +8,7 @@ const Header = () => {
             <FontAwesomeIcon icon="phone-volume"/>
             <FontAwesomeIcon icon="running"/>
             <FontAwesomeIcon icon="heart"/>
+    
             
         </div>
     )
