@@ -11,26 +11,34 @@
 
 // export default Declaration
 
-import React from 'react';
+import React , {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Typography, Grid, Paper} from '@material-ui/core';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    margin: theme.spacing(2),
     
   },
   paper: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(2,2),
+    // margin: theme.spacing(2,2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-    fontSize: "30px",
+    fontSize: "2vw",
   },
   typoStyle:{
     paddingTop: "20px"
   },
+  chevron:{
+    padding: theme.spacing(0,0)
+  },
   colorTest:{
+    padding: theme.spacing(0,0,0,0),
+    margin: theme.spacing(0,0,0,0),
     color:"grey", 
     padding: theme.spacing(3, 2),
     height: "100%",
@@ -41,15 +49,44 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function FullWidthGrid() {
+
   const classes = useStyles();
-  console.log(classes)
+  console.log(classes);
+  const size = useWindowSize();
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+  }
+
   return (
     <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={2}>
+      {size.height}{size.width}
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="laptop-medical" size="6x" />
+          <FontAwesomeIcon icon="laptop-medical" size="5x" />
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -66,13 +103,13 @@ export default function FullWidthGrid() {
           </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} sm={1} md={1}>
         <FontAwesomeIcon icon="chevron-right" size="4x" className={classes.colorTest}/>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="map-marker-alt" size="6x"/>
+          <FontAwesomeIcon icon="map-marker-alt" size="5x"/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -89,13 +126,13 @@ export default function FullWidthGrid() {
           </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} sm={1} md={1}>
         <FontAwesomeIcon icon="chevron-right" size="4x"  className={classes.colorTest}/>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="calendar-alt" size="6x"/>
+          <FontAwesomeIcon icon="calendar-alt" size="5x"/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -112,13 +149,13 @@ export default function FullWidthGrid() {
           </Grid>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={1}>
+        <Grid item xs={12} sm={1} md={1}>
         <FontAwesomeIcon icon="chevron-right" size="4x" className={classes.colorTest}/>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="home" size="6x"/>
+          <FontAwesomeIcon icon="home" size="5x"/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
