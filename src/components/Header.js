@@ -6,13 +6,34 @@ import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles((theme)=> ({
+
     root:{
+      position: 'relative',
+      // width: "100%",
       minHeight: '40vh',
       //minHeight:'400px',
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/mbh_2.0_bg1.png'})`,
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/testbg.jpg'})`,
       backgroundRepeat:'no-repeat',
       backgroundSize: 'cover',
+
     },
+
+    overlay:  {
+      minHeight: '100%',
+      width: '100%',
+      position:"absolute",
+      background:'linear-gradient(175deg, blue, blue 55%, transparent 55%, transparent)',
+      // // zIndex: "1",
+      // // left:"20px",
+      // // right:calc(0.5 * 33%),
+      // // top:calc(33% + 30px),
+      // background: 'blue',
+      // borderBottom: "40px",
+      // '&:before':{
+
+      }
+  ,
+    
 
     inputFields:{
       display:'flex',
@@ -67,8 +88,11 @@ const Header = () => {
     const classes = useStyles();  
 
     return (
+      <>
         <div className={classes.root}>
+        <div className={classes.overlay}>
           <Grid
+          
           container
           direction="column"
           justify="center"
@@ -101,12 +125,15 @@ const Header = () => {
                   </label>
           
                 </div>
+              
             </Grid>
-
+          
 
           </Grid>
-            
+          </div>
         </div>
+      
+        </>
     )
 }
 
