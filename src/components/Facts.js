@@ -9,7 +9,7 @@ import { faBorderNone } from '@fortawesome/free-solid-svg-icons';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "blue",
+    backgroundColor: "#5FA1E7",
     margin: theme.spacing(2),
   },
   paper: {
@@ -37,8 +37,8 @@ export default function Facts() {
           <Grid item xs={12}>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
-          <Typography variant="h4" component="h5">
-          1000 zufriedene Kunden
+          <Typography variant="h4" component="h5" color="primary">
+          10000 Besucher
           </Typography>
           </Grid>
           </Paper>
@@ -52,8 +52,8 @@ export default function Facts() {
          
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
-          <Typography variant="h4" component="h5">
-            1000 zufriedene Kunden
+          <Typography variant="h4" component="h5" color="primary">
+            7000 Therapeuten
           </Typography>
           </Grid>
           <Grid item xs={12} >
@@ -69,7 +69,7 @@ export default function Facts() {
           
           </Grid>
           <Grid item xs={12} className={classes.typoStyle} >
-          <Typography variant="h4" component="h5">
+          <Typography variant="h4" component="h5" color="primary">
           1000 zufriedene Kunden
           </Typography>
           </Grid>
@@ -86,8 +86,8 @@ export default function Facts() {
          
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
-          <Typography variant="h4" component="h5">
-          1000 zufriedene Kunden
+          <Typography variant="h4" component="h5" color="primary">
+          100% Zufriedenheit
           </Typography>
           </Grid>
           <Grid item xs={12} >

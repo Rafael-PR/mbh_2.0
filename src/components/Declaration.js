@@ -15,12 +15,14 @@ import React , {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Typography, Grid, Paper} from '@material-ui/core';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { CenterFocusStrong } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     margin: theme.spacing(2),
+
     
   },
   paper: {
@@ -39,13 +41,17 @@ const useStyles = makeStyles((theme) => ({
   colorTest:{
     padding: theme.spacing(0,0,0,0),
     margin: theme.spacing(0,0,0,0),
-    color:"grey", 
+    color:"#5FA1E7", 
     padding: theme.spacing(3, 2),
     height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center"
-  }
+  },
+  icons: {
+    fontSize: '7.0rem',
+    color:"#5FA1E7",
+  },
 }));
 
 export default function FullWidthGrid() {
@@ -86,7 +92,7 @@ export default function FullWidthGrid() {
         <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="laptop-medical" size="5x" />
+          <FontAwesomeIcon icon="laptop-medical" className={classes.icons} />
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -109,7 +115,7 @@ export default function FullWidthGrid() {
         <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="map-marker-alt" size="5x"/>
+          <FontAwesomeIcon icon="map-marker-alt" className={classes.icons}/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -132,7 +138,7 @@ export default function FullWidthGrid() {
         <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="calendar-alt" size="5x"/>
+          <FontAwesomeIcon icon="calendar-alt" className={classes.icons}/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">
@@ -155,7 +161,7 @@ export default function FullWidthGrid() {
         <Grid item xs={12} sm={4} md={2}>
           <Paper className={classes.paper}>
           <Grid item xs={12}>
-          <FontAwesomeIcon icon="home" size="5x"/>
+          <FontAwesomeIcon icon="home" className={classes.icons}/>
           </Grid>
           <Grid item xs={12} className={classes.typoStyle}>
           <Typography variant="h5" component="h5">

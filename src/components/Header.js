@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import  { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import SearchInputField from './SearchInputField'
 
 
 const useStyles = makeStyles((theme)=> ({
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme)=> ({
       // width: "100%",
       minHeight: '40vh',
       //minHeight:'400px',
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/testbg.jpg'})`,
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/mbh_2.0_bg3.png'})`,
       backgroundRepeat:'no-repeat',
       backgroundSize: 'cover',
 
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme)=> ({
       minHeight: '100%',
       width: '100%',
       position:"absolute",
-      background:'linear-gradient(175deg, blue, blue 55%, transparent 55%, transparent)',
+      background:'linear-gradient(175deg, #5FA1E7, #5FA1E7 55%, transparent 55%, transparent)',
       // // zIndex: "1",
       // // left:"20px",
       // // right:calc(0.5 * 33%),
@@ -49,35 +50,7 @@ const useStyles = makeStyles((theme)=> ({
       width: '60%',
       marginBottom: '2%',
     },
-    inputLeft:{
-      minHeight: '40px',
-      borderTopLeftRadius:'10px',
-      borderBottomLeftRadius:'10px',
-      paddingLeft:'5px',
-      borderColor:'#5FA1E7'
-    },
-    inputMid:{
-      minHeight: '40px',
-      paddingLeft:'5px',
-      borderColor:'#5FA1E7'
-      
-    },
-    find:{
-      minHeight: '40px',
-      maxWidth:'60px',
-      borderTopRightRadius:'10px',
-      borderBottomRightRadius:'10px',
-      backgroundColor:'#E0B14A',
-      colorAdjust:'#FFFFFF',
-      textAlign:'center',
-      borderColor:'#5FA1E7',
-      //++++++++++++ Rahmen/Border gefällt nicht so +++++++++++++++++++++
-      //++++++++++++ Schriftfarbe ändern ! +++++++++++++++++++++++++++
-      
-    },
 
-    
-   
 
   }));
 
@@ -99,19 +72,22 @@ const Header = () => {
           alignItems="stretch">
             <Grid
               item xs={12}>
-                <Typography variant="h4" color="#FFFFFF" gutterBottom >
+                <Typography variant="h3" color="primary" fontweight="bold"gutterBottom >
                   Bereit vom Schmerz befreit zu werden ?
                   </Typography>
             </Grid>
             <Grid
               item xs={12}>
-                Mit Mobile Health jetzt unkompliziert Deinen Therapeuten nach Hause bestellen.
+                <Typography variant="h6" color="primary"  >
+                  Mit Mobile Health jetzt unkompliziert Deinen Therapeuten nach Hause bestellen.
+                  </Typography>
+                
             </Grid>
             <Grid
               item xs={12}
               className={classes.inputFields}
               >
-                <div className={classes.formInputs}>
+                {/* <div className={classes.formInputs}>
                   <label>
                     <input name='name' type='text' placeholder='Was'className={classes.inputLeft} />
                   </label>
@@ -124,9 +100,11 @@ const Header = () => {
                     <input name='location' type='text' placeholder='Finden' className={classes.find} />
                   </label>
           
-                </div>
-              
+                </div> */}
+              <SearchInputField className={classes.inputFields}/>
             </Grid>
+
+            
           
 
           </Grid>
